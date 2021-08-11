@@ -38,12 +38,12 @@
 }
 @media only screen and (min-width: 1440px) {
   .closed.open {
-    height: 33rem;
+    height: 30rem;
   }
 }
 @media only screen and (min-width: 2560px) {
   .closed.open {
-    height: 38rem;
+    height: 40rem;
   }
 }
 .fade {
@@ -53,10 +53,12 @@
   opacity: 1 !important;
 }
 .slide.up {
-  transform: translateY(-10%);
+  transform: translateY(100%);
+  opacity: 0;
 }
 .slide.up.in {
   transform: translateY(0);
+  opacity: 1;
 }
 .slide.left {
   transform: translateX(15%);
@@ -153,7 +155,7 @@ html body .top-bar {
   display: flex;
   justify-content: space-between;
   transition: opacity 0.8s ease-in-out;
-  padding-top: 1.5rem;
+  padding: 1rem 0;
 }
 @media only screen and (min-width: 768px) {
   html body .top-bar {
@@ -174,45 +176,47 @@ html body .top-bar {
     left: 10rem;
   }
 }
-html body .top-bar .block-logo h1 {
+html body .top-bar .block-logo {
+  display: grid;
+}
+html body .top-bar .block-logo a {
   font-family: 'Montserrat Subrayada', sans-serif;
   font-size: 0.9rem;
 }
 @media only screen and (min-width: 768px) {
-  html body .top-bar .block-logo h1 {
-    font-size: 1.2rem;
+  html body .top-bar .block-logo a {
+    font-size: 1rem;
   }
 }
 @media only screen and (min-width: 1440px) {
-  html body .top-bar .block-logo h1 {
+  html body .top-bar .block-logo a {
     font-size: 1.3rem;
   }
 }
 @media only screen and (min-width: 2560px) {
-  html body .top-bar .block-logo h1 {
+  html body .top-bar .block-logo a {
     font-size: 1.9rem;
   }
 }
-html body .top-bar .block-logo p {
+html body .top-bar .block-logo a:nth-child(2) {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  opacity: 0.7;
   font-size: 0.7rem;
-}
-@media only screen and (min-width: 768px) {
-  html body .top-bar .block-logo p {
-    font-size: 0.8rem;
-  }
+  opacity: 0.7;
+  transition: all 0.4s ease-in-out;
 }
 @media only screen and (min-width: 1440px) {
-  html body .top-bar .block-logo p {
+  html body .top-bar .block-logo a:nth-child(2) {
     font-size: 0.85rem;
   }
 }
 @media only screen and (min-width: 2560px) {
-  html body .top-bar .block-logo p {
+  html body .top-bar .block-logo a:nth-child(2) {
     font-size: 1.1rem;
   }
+}
+html body .top-bar .block-logo a:nth-child(2):hover {
+  opacity: 0.9;
 }
 html body .top-bar .block-nav {
   font-family: 'Prompt', sans-serif;
@@ -244,7 +248,6 @@ html body .top-bar .block-nav ul li a {
 }
 @media only screen and (min-width: 1440px) {
   html body .top-bar .block-nav ul li a {
-    font-size: 0.85rem;
     padding: 0 1.3rem 1.3rem 1.3rem;
   }
 }
@@ -277,11 +280,11 @@ html body header {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
   grid-row-gap: 2rem;
-  padding-top: 4rem;
+  padding-top: 3rem;
 }
 @media only screen and (min-width: 768px) {
   html body header {
-    padding-top: 5rem;
+    padding-top: 4rem;
   }
 }
 @media only screen and (min-width: 1366px) {
@@ -291,7 +294,7 @@ html body header {
 }
 @media only screen and (min-width: 2560px) {
   html body header {
-    padding-top: 7rem;
+    padding-top: 5rem;
   }
 }
 html body header .block-logo {
@@ -302,7 +305,7 @@ html body header .block-logo {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/header/hero.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: all 2s ease;
+  transition: all 2s cubic-bezier(0.67, 0.18, 0.36, 1);
 }
 html body header .block-logo h1 {
   font-family: 'Montserrat Subrayada', sans-serif;
@@ -333,7 +336,7 @@ html body header .block-subheader {
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
-  grid-row-gap: 2rem;
+  grid-row-gap: 1rem;
 }
 @media only screen and (min-width: 768px) {
   html body header .block-subheader {
@@ -360,6 +363,7 @@ html body header .block-subheader {
   }
 }
 html body header .block-subheader .block-intro h1 {
+  overflow: hidden;
   font-size: 2rem;
 }
 @media only screen and (min-width: 768px) {
@@ -382,9 +386,18 @@ html body header .block-subheader .block-intro h1 {
     font-size: 5.5rem;
   }
 }
+html body header .block-subheader .block-intro h1 span {
+  overflow: hidden;
+  display: block;
+  transition: transform 1s ease, opacity 0.9s ease;
+}
+html body header .block-subheader .block-intro h1:nth-child(2) span {
+  transition-delay: 225ms;
+}
 html body header .block-subheader .block-intro p {
   margin-top: 0.5rem;
   font-size: 0.75rem;
+  transition: opacity 1.4s ease-in-out;
 }
 html body header .block-subheader .block-intro p br {
   display: none;
@@ -407,7 +420,7 @@ html body header .block-subheader .block-intro p br {
 @media only screen and (min-width: 768px) {
   html body header .block-subheader .block-intro p {
     margin-top: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 @media only screen and (min-width: 1366px) {
@@ -438,11 +451,6 @@ html body header .block-subheader .block-options {
     overflow: unset;
   }
 }
-@media only screen and (min-width: 1440px) {
-  html body header .block-subheader .block-options {
-    grid-column-gap: 1rem;
-  }
-}
 @media only screen and (min-width: 2560px) {
   html body header .block-subheader .block-options {
     grid-column-gap: 3rem;
@@ -471,7 +479,7 @@ html body header .block-subheader .block-options a .item {
   html body header .block-subheader .block-options a .item {
     height: 10rem;
     width: 10rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
   }
 }
 @media only screen and (min-width: 1366px) {

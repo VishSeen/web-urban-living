@@ -1,6 +1,6 @@
 const open = 'open';
 const visible = 'visible';
-const slideLeftIn = 'in';
+const animIn = 'in';
 
 
 
@@ -16,7 +16,7 @@ function startupAnimation() {
 
     setTimeout(() => {
         heroBlock.classList.add(open);
-    }, 400);
+    }, 1000);
 
     setTimeout(() => {
         heroBlockText.classList.add(visible);
@@ -29,12 +29,23 @@ function startupAnimation() {
     setTimeout(() => {
         for (let i = 1; i < 4; i++) {
             const blockOptionsItem = document.querySelector('.block-options a:nth-child(' + i + ')');
-            blockOptionsItem.classList.add(slideLeftIn);
+            blockOptionsItem.classList.add(animIn);
         }
     }, 2200);
 
     setTimeout(() => {
-        blockOptionsItems.style.transitionDelay = '0';
+        for (let i = 1; i < 3; i++) {
+            const subHeadBlockIntroSpan = document.querySelector('.block-subheader .block-intro h1:nth-child(' + i + ') span');
+            subHeadBlockIntroSpan.classList.add(animIn);
+        }
+    }, 2500);
+    setTimeout(() => {
+        const subHeadBlockIntroP = document.querySelector('.block-subheader .block-intro p');
+        subHeadBlockIntroP.classList.add(visible);
+    }, 2800);
+
+    setTimeout(() => {
+        blockOptionsItems.style.transitionDelay = '0s';
         blockOptionsItems.style.transition = 'all 0.4s ease';
     }, 7000);
 }
