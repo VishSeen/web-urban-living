@@ -461,6 +461,12 @@ html body header .block-subheader .block-options a .item {
   padding-bottom: 1rem;
   transition: all 0.4s ease;
 }
+@media only screen and (min-width: 425px) {
+  html body header .block-subheader .block-options a .item {
+    height: 11rem;
+    width: 11rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   html body header .block-subheader .block-options a .item {
     height: 10rem;
