@@ -654,7 +654,7 @@ html body main .sect .block-content .block-text .block-title {
   }
 }
 html body main .sect .block-content .block-text .block-title h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 @media only screen and (min-width: 768px) {
   html body main .sect .block-content .block-text .block-title h1 {
@@ -680,11 +680,11 @@ html body main .sect .block-content .block-text .block-para {
   color: #ffffff;
 }
 html body main .sect .block-content .block-text .block-para p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 @media only screen and (min-width: 1366px) {
   html body main .sect .block-content .block-text .block-para p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -807,7 +807,7 @@ html body main #sect-services .block-services {
 html body main #sect-services .block-services .block-item {
   background-color: #6E8383;
   width: 100%;
-  padding: 2rem;
+  padding: 3rem 2rem;
   margin: 1rem 0;
   transition: all 0.8s ease;
 }
