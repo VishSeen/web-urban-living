@@ -485,16 +485,16 @@ html body header .block-subheader .block-options a {
 }
 html body header .block-subheader .block-options a .item {
   display: grid;
-  height: 8rem;
-  width: 8rem;
+  height: 10rem;
+  width: 10rem;
   text-align: center;
   padding-bottom: 1rem;
   transition: all 0.4s ease;
 }
 @media only screen and (min-width: 425px) {
   html body header .block-subheader .block-options a .item {
-    height: 11rem;
-    width: 11rem;
+    height: 12rem;
+    width: 12rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -726,7 +726,7 @@ html body main #sect-sponsors {
 }
 html body main #sect-sponsors .block-sponsors {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   overflow: scroll;
   margin: 1rem 0;
 }
