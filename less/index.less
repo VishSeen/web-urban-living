@@ -149,7 +149,6 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: @scrollColor;
-  border-radius: 6px;
   transition: all 1s ease-in-out;
   &:hover {
     background: @scrollColorHover;
@@ -190,47 +189,60 @@ a {
 }
 
 
+.block-button {
+    margin-top: 4rem;
+    a {
+        font-family: @fontMontserrat;
+        font-weight: @fontBold;
+        background-color: @colorAccent;
+        padding: 1rem 2.5rem;
+        border-radius: 2px;
+        transition: all 1s ease-in-out;
+        font-size: 0.6rem;
+        @media @large {
+            font-size: 0.7rem;
+            padding: 1rem 2.5rem;
+        }
+        @media @xxlarge {
+            font-size: 0.8rem;
+            padding: 1.1rem 2.5rem;
+        }
+        &:hover {
+            color: @darkColor;
+        }
+    }
+}
 
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// HTML STRUCTURE
+////////////////////////////////////////////////////////////////////////////////////////////////////
 html {
     body {
         background-color: @colorPrimary;
         color: @lightColor;
-        padding: 1.5rem 1rem;
-        @media @medium {
-            padding: 2rem;
-        }
-        @media @xlarge {
-            padding: 2rem 5rem;
-        }
-        @media @xxlarge {
-            padding: 2rem 10rem;
-        }
 
         .top-bar {
             background-color: @colorPrimary;
             position: fixed;
             top: 0;
-            right: 1rem;
-            left: 1rem;
+            right: 0;
+            left: 0;
             display: flex;
             justify-content: space-between;
             transition: opacity 0.8s ease-in-out;
-            padding: 1rem 0;
+            padding: 1rem;
+            z-index: 20;
             @media @medium {
-                padding-top: 2rem;
-                right: 2rem;
-                left: 2rem;
+                padding: 2rem 2rem 1rem;
             }
             @media @xlarge {
-                right: 5rem;
-                left: 5rem;
+                padding: 2rem 5rem 1rem 5rem;
             }
             @media @xxlarge {
-                right: 10rem;
-                left: 10rem;
+                padding: 2rem 10rem 1rem 10rem;
             }
-
             .block-logo {
                 display: grid;
                 a {
@@ -328,34 +340,38 @@ html {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, auto);
             grid-row-gap: 2rem;
-            padding-top: 3rem;
+            padding: 5rem 1rem 0 1rem;
             @media @medium {
-                padding-top: 4rem;
+                padding: 6rem 2rem 0 2rem;
             }
             @media @large {
                 grid-row-gap: 3rem;
             }
-            @media @xxlarge {
-                padding-top: 5rem;
+            @media @xlarge {
+                padding: 7rem 5rem 0 5rem;
             }
+            @media @xxlarge {
+                padding: 8rem 10rem 0 10rem;
+            }
+
             .block-logo {
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/header/hero.jpg');
+                background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/header/hero-01.jpg');
                 background-size: cover;
-                background-position: bottom;
+                background-position: center;
                 transition: all 2s cubic-bezier(0.67, 0.18, 0.36, 1);
                 h1 {
                     font-family: @fontMontserratSubrayada;
                     font-size: 1.5rem;
                     transition: all 1s ease-in;
                     @media @medium {
-                        font-size: 2.5rem;
+                        font-size: 2rem;
                     }
                     @media @large {
-                        font-size: 3rem;
+                        font-size: 2.5rem;
                     }
                     @media @xlarge {
                         font-size: 3.5rem;
@@ -392,6 +408,9 @@ html {
                     h1 {
                         overflow: hidden;
                         font-size: 2rem;
+                        @media @xsmall {
+                            font-size: 2.2rem;
+                        }
                         @media @medium {
                             font-size: 2.5rem;
                         }
@@ -417,19 +436,10 @@ html {
                     }
                     p {
                         margin-top: 0.5rem;
-                        font-size: 0.75rem;
+                        font-size: 0.8rem;
                         transition: opacity 1.4s ease-in-out;
-                        br {
-                            display: none;
-                            @media @large {
-                                display: block;
-                            }
-                            @media @xlarge {
-                                display: none;
-                            }
-                            @media @xxlarge {
-                                display: block;
-                            }
+                        @media @xsmall {
+                            font-size: 0.9rem;
                         }
                         @media @medium {
                             margin-top: 1rem;
@@ -443,6 +453,18 @@ html {
                         }
                         @media @xxlarge {
                             font-size: 1.3rem;
+                        }
+                        br {
+                            display: none;
+                            @media @large {
+                                display: block;
+                            }
+                            @media @xlarge {
+                                display: none;
+                            }
+                            @media @xxlarge {
+                                display: block;
+                            }
                         }
                     }
                 }
@@ -507,14 +529,14 @@ html {
                             }
                         }
                         &:nth-child(1) {
-                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/01.jpg');
+                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/01.jpg');
                         }
                         &:nth-child(2) {
-                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/02.jpg');
+                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/02.jpg');
                             transition-delay: 125ms;;
                         }
                         &:nth-child(3) {
-                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/03.jpg');
+                            background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/03.jpg');
                             transition-delay: 175ms;
                         }
                         &:hover {
@@ -525,6 +547,287 @@ html {
                         }
                     }
                 }
+            }
+        }
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        // MAIN
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        main {
+            // display: none;
+            margin: 3rem 0;
+            margin-bottom: 0;
+            .sect {
+                display: grid;
+                padding: 2rem 1rem;
+                margin: 1rem 0;
+                @media @medium {
+                    margin: 2rem 0;
+                }
+                @media @large {
+                    margin-top: 3rem;
+                    margin-bottom: 3rem;
+                }
+                @media @xlarge {
+                    padding: 4rem 5rem;
+                }
+                @media @xxlarge {
+                    padding: 4rem 10rem;
+                }
+                &.parallaxe {
+                    height: auto;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    padding: 5rem 1rem;
+                    @media @medium {
+                        height: 100vh;
+                    }
+                }
+                .block-content {
+                    display: grid;
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-areas: "text"
+                                         "image";
+                    grid-row-gap: 1rem;
+                    @media @medium {
+                        grid-template-rows: 1fr;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-areas: "text image";
+                        grid-column-gap: 4rem;
+                    }
+                    @media @large {
+                        grid-column-gap: 7rem;
+                    }
+                    @media @xlarge {
+                        grid-column-gap: 9rem;
+                    }
+                    @media @xxlarge {
+                        grid-column-gap: 15rem;
+                    }
+                    .block-text {
+                        grid-area: text;
+                        align-self: center;
+                        .block-title {
+                            color: @lightColor;
+                            margin-bottom: 1rem;
+                            @media @large {
+                                margin-bottom: 2rem;
+                            }
+                            @media @xlarge {
+                                margin-bottom: 3rem;
+                            }
+                            @media @xxlarge {
+                                margin-bottom: 4rem;
+                            }
+                            h1 {
+                                font-size: 2rem;
+                                @media @medium {
+                                    font-size: 2.5rem;
+                                }
+                                @media @large {
+                                    font-size: 3rem;
+                                }
+                                @media @xlarge {
+                                    font-size: 3.5rem;
+                                }
+                                @media @xxlarge {
+                                    font-size: 4.5rem;
+                                }
+                            }
+                        }
+                        .block-para {
+                            color: @lightColor;
+                            p {
+                                font-size: 0.8rem;
+                                @media @large {
+                                    font-size: 0.9rem;
+                                }
+                                @media @xlarge {
+                                    font-size: 1rem;
+                                }
+                                @media @xxlarge {
+                                    font-size: 1.2rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .block-image {
+                        grid-area: image;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            #sect-sponsors {
+                background-color: @colorPrimaryDark;
+                padding: 0;
+                margin: 1rem 0;
+                @media @medium {
+                    padding: 1  rem 0;
+                    margin: 2rem 0;
+                }
+                @media @large {
+                    margin: 3rem 0;
+                }
+                @media @xlarge {
+                    padding: 4rem 0;
+                }
+                .block-sponsors {
+                    display: flex;
+                    justify-content: space-around;
+                    overflow: scroll;
+                    margin: 1rem 0;
+                    @media @medium {
+                        justify-content: space-around;
+                        overflow: unset;
+                        margin: 2rem 0;
+                    }
+                    .item {
+                        text-align: center;
+                        img {
+                            width: 6rem;
+                            @media @medium {
+                                width: 5rem;
+                            }
+                            @media @large {
+                                width: 7rem;
+                            }
+                            @media @xlarge {
+                                width: 8rem;
+                            }
+                            @media @xxlarge {
+                                width: 10rem;
+                            }
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            #sect-services {
+                background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/services.jpg');
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                .block-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-self: center;
+                    text-align: center;
+                    width: 100%;
+                    margin: 0 auto;
+                    @media @medium {
+                        width: 60%;
+                    }
+                    @media @large {
+                        width: 40%;
+                    }
+                    .block-text {
+                        .block-title {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+
+                .block-services {
+                    display: flex;
+                    justify-content: space-around;
+                    text-align: center;
+                    flex-direction: column ;
+                    @media @medium {
+                        flex-direction: row;
+                    }
+                    .block-item {
+                        background-color: @colorPrimary;
+                        width: 100%;
+                        padding: 2rem;
+                        margin: 1rem 0;
+                        transition: all 0.8s ease;
+                        @media @medium {
+                            width: 30%;
+                            margin: 0;
+                        }
+                        @media @large {
+                            width: 25%;
+                            padding: 3rem 4rem;
+                        }
+                        @media @xlarge {
+                            padding: 5rem 4rem;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.025);
+                            background-color: @colorPrimaryDark;
+                        }
+                        .block-icon {
+                            margin-bottom: 1rem;
+                            @media @large {
+                                margin-bottom: 2rem;
+                            }
+                            i {
+                                font-size: 1.5rem;
+                                @media @xlarge {
+                                    font-size: 1.7rem;
+                                }
+                                @media @xxlarge {
+                                    font-size: 2.3rem;
+                                }
+                            }
+                        }
+                        .block-title {
+                            margin-bottom: 0.5rem;
+                            @media @large {
+                                margin-bottom: 1rem;
+                            }
+                            h3 {
+                                font-size: 1.1rem;
+                                @media @xlarge {
+                                    font-size: 1.5rem;
+                                }
+                                @media @xxlarge {
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
+                        .block-para {
+                            p {
+                                font-size: 0.7rem;
+                                @media @xxlarge {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            #sect-schedule {
+                background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
+                display: grid;
+                align-items: center;
+                text-align: center;
+                height: 100vh;
+                margin-bottom: 0;
+                .block-content {
+                    grid-column-gap: 0;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 1fr;
+                }
+            }
+
+
+            #sect-contact {
+                background-color: @colorPrimaryDark;
+                margin: 0;
             }
         }
     }

@@ -11,7 +11,7 @@ function startupAnimation() {
     const heroBlock = document.querySelector('header .block-logo');
     const heroBlockText = document.querySelector('header .block-logo h1');
 
-    const blockOptionsItems = document.querySelector('.block-options a');
+
 
 
     setTimeout(() => {
@@ -45,9 +45,12 @@ function startupAnimation() {
     }, 2800);
 
     setTimeout(() => {
-        blockOptionsItems.style.transitionDelay = '0s';
-        blockOptionsItems.style.transition = 'all 0.4s ease';
-    }, 7000);
+        for (let i = 1; i < 3; i++) {
+            const blockOptionsItems = document.querySelector('.block-options a:nth-child(' + i + ')');
+            blockOptionsItems.style.transitionDelay = '0s';
+            blockOptionsItems.style.transition = 'all 0.4s ease';
+        }
+    }, 5000);
 }
 
 

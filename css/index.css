@@ -93,7 +93,6 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #181818;
-  border-radius: 6px;
   transition: all 1s ease-in-out;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -126,54 +125,62 @@ a {
   color: #ffffff;
   text-decoration: none;
 }
-html body {
-  background-color: #6E8383;
-  color: #ffffff;
-  padding: 1.5rem 1rem;
+.block-button {
+  margin-top: 4rem;
 }
-@media only screen and (min-width: 768px) {
-  html body {
-    padding: 2rem;
-  }
+.block-button a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background-color: #DBB262;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  transition: all 1s ease-in-out;
+  font-size: 0.6rem;
 }
-@media only screen and (min-width: 1440px) {
-  html body {
-    padding: 2rem 5rem;
+@media only screen and (min-width: 1366px) {
+  .block-button a {
+    font-size: 0.7rem;
+    padding: 1rem 2.5rem;
   }
 }
 @media only screen and (min-width: 2560px) {
-  html body {
-    padding: 2rem 10rem;
+  .block-button a {
+    font-size: 0.8rem;
+    padding: 1.1rem 2.5rem;
   }
+}
+.block-button a:hover {
+  color: #000000;
+}
+html body {
+  background-color: #6E8383;
+  color: #ffffff;
 }
 html body .top-bar {
   background-color: #6E8383;
   position: fixed;
   top: 0;
-  right: 1rem;
-  left: 1rem;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   transition: opacity 0.8s ease-in-out;
-  padding: 1rem 0;
+  padding: 1rem;
+  z-index: 20;
 }
 @media only screen and (min-width: 768px) {
   html body .top-bar {
-    padding-top: 2rem;
-    right: 2rem;
-    left: 2rem;
+    padding: 2rem 2rem 1rem;
   }
 }
 @media only screen and (min-width: 1440px) {
   html body .top-bar {
-    right: 5rem;
-    left: 5rem;
+    padding: 2rem 5rem 1rem 5rem;
   }
 }
 @media only screen and (min-width: 2560px) {
   html body .top-bar {
-    right: 10rem;
-    left: 10rem;
+    padding: 2rem 10rem 1rem 10rem;
   }
 }
 html body .top-bar .block-logo {
@@ -280,11 +287,11 @@ html body header {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
   grid-row-gap: 2rem;
-  padding-top: 3rem;
+  padding: 5rem 1rem 0 1rem;
 }
 @media only screen and (min-width: 768px) {
   html body header {
-    padding-top: 4rem;
+    padding: 6rem 2rem 0 2rem;
   }
 }
 @media only screen and (min-width: 1366px) {
@@ -292,9 +299,14 @@ html body header {
     grid-row-gap: 3rem;
   }
 }
+@media only screen and (min-width: 1440px) {
+  html body header {
+    padding: 7rem 5rem 0 5rem;
+  }
+}
 @media only screen and (min-width: 2560px) {
   html body header {
-    padding-top: 5rem;
+    padding: 8rem 10rem 0 10rem;
   }
 }
 html body header .block-logo {
@@ -302,9 +314,9 @@ html body header .block-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/header/hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/header/hero-01.jpg');
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   transition: all 2s cubic-bezier(0.67, 0.18, 0.36, 1);
 }
 html body header .block-logo h1 {
@@ -314,12 +326,12 @@ html body header .block-logo h1 {
 }
 @media only screen and (min-width: 768px) {
   html body header .block-logo h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 1366px) {
   html body header .block-logo h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -366,6 +378,11 @@ html body header .block-subheader .block-intro h1 {
   overflow: hidden;
   font-size: 2rem;
 }
+@media only screen and (min-width: 375px) {
+  html body header .block-subheader .block-intro h1 {
+    font-size: 2.2rem;
+  }
+}
 @media only screen and (min-width: 768px) {
   html body header .block-subheader .block-intro h1 {
     font-size: 2.5rem;
@@ -396,25 +413,12 @@ html body header .block-subheader .block-intro h1:nth-child(2) span {
 }
 html body header .block-subheader .block-intro p {
   margin-top: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   transition: opacity 1.4s ease-in-out;
 }
-html body header .block-subheader .block-intro p br {
-  display: none;
-}
-@media only screen and (min-width: 1366px) {
-  html body header .block-subheader .block-intro p br {
-    display: block;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  html body header .block-subheader .block-intro p br {
-    display: none;
-  }
-}
-@media only screen and (min-width: 2560px) {
-  html body header .block-subheader .block-intro p br {
-    display: block;
+@media only screen and (min-width: 375px) {
+  html body header .block-subheader .block-intro p {
+    font-size: 0.9rem;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -436,6 +440,24 @@ html body header .block-subheader .block-intro p br {
 @media only screen and (min-width: 2560px) {
   html body header .block-subheader .block-intro p {
     font-size: 1.3rem;
+  }
+}
+html body header .block-subheader .block-intro p br {
+  display: none;
+}
+@media only screen and (min-width: 1366px) {
+  html body header .block-subheader .block-intro p br {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body header .block-subheader .block-intro p br {
+    display: none;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body header .block-subheader .block-intro p br {
+    display: block;
   }
 }
 html body header .block-subheader .block-options {
@@ -520,14 +542,14 @@ html body header .block-subheader .block-options a .item h3 {
   }
 }
 html body header .block-subheader .block-options a:nth-child(1) {
-  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/01.jpg');
+  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/01.jpg');
 }
 html body header .block-subheader .block-options a:nth-child(2) {
-  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/02.jpg');
+  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/02.jpg');
   transition-delay: 125ms;
 }
 html body header .block-subheader .block-options a:nth-child(3) {
-  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.8)), url('../img/subhead/03.jpg');
+  background-image: linear-gradient(rgba(177, 99, 99, 0), rgba(0, 0, 0, 0.6)), url('../img/subhead/03.jpg');
   transition-delay: 175ms;
 }
 html body header .block-subheader .block-options a:hover {
@@ -535,4 +557,345 @@ html body header .block-subheader .block-options a:hover {
 }
 html body header .block-subheader .block-options a:hover .item {
   transform: scale(1.05);
+}
+html body main {
+  margin: 3rem 0;
+  margin-bottom: 0;
+}
+html body main .sect {
+  display: grid;
+  padding: 2rem 1rem;
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect {
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect {
+    padding: 4rem 5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect {
+    padding: 4rem 10rem;
+  }
+}
+html body main .sect.parallaxe {
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5rem 1rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect.parallaxe {
+    height: 100vh;
+  }
+}
+html body main .sect .block-content {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "text" "image";
+  grid-row-gap: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .block-content {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "text image";
+    grid-column-gap: 4rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .block-content {
+    grid-column-gap: 7rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .block-content {
+    grid-column-gap: 9rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .block-content {
+    grid-column-gap: 15rem;
+  }
+}
+html body main .sect .block-content .block-text {
+  grid-area: text;
+  align-self: center;
+}
+html body main .sect .block-content .block-text .block-title {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .block-content .block-text .block-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .block-content .block-text .block-title {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .block-content .block-text .block-title {
+    margin-bottom: 4rem;
+  }
+}
+html body main .sect .block-content .block-text .block-title h1 {
+  font-size: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main .sect .block-content .block-text .block-title h1 {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .block-content .block-text .block-title h1 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .block-content .block-text .block-title h1 {
+    font-size: 3.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .block-content .block-text .block-title h1 {
+    font-size: 4.5rem;
+  }
+}
+html body main .sect .block-content .block-text .block-para {
+  color: #ffffff;
+}
+html body main .sect .block-content .block-text .block-para p {
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body main .sect .block-content .block-text .block-para p {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main .sect .block-content .block-text .block-para p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main .sect .block-content .block-text .block-para p {
+    font-size: 1.2rem;
+  }
+}
+html body main .sect .block-content .block-image {
+  grid-area: image;
+}
+html body main .sect .block-content .block-image img {
+  width: 100%;
+}
+html body main #sect-sponsors {
+  background-color: #536363;
+  padding: 0;
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-sponsors {
+    padding: 1  rem 0;
+    margin: 2rem 0;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-sponsors {
+    margin: 3rem 0;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-sponsors {
+    padding: 4rem 0;
+  }
+}
+html body main #sect-sponsors .block-sponsors {
+  display: flex;
+  justify-content: space-around;
+  overflow: scroll;
+  margin: 1rem 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-sponsors .block-sponsors {
+    justify-content: space-around;
+    overflow: unset;
+    margin: 2rem 0;
+  }
+}
+html body main #sect-sponsors .block-sponsors .item {
+  text-align: center;
+}
+html body main #sect-sponsors .block-sponsors .item img {
+  width: 6rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-sponsors .block-sponsors .item img {
+    width: 5rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-sponsors .block-sponsors .item img {
+    width: 7rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-sponsors .block-sponsors .item img {
+    width: 8rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-sponsors .block-sponsors .item img {
+    width: 10rem;
+  }
+}
+html body main #sect-sponsors .block-sponsors .item img:hover {
+  cursor: pointer;
+}
+html body main #sect-services {
+  background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/services.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+html body main #sect-services .block-content {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-services .block-content {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-services .block-content {
+    width: 40%;
+  }
+}
+html body main #sect-services .block-content .block-text .block-title {
+  margin-bottom: 1rem;
+}
+html body main #sect-services .block-services {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: column ;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-services .block-services {
+    flex-direction: row;
+  }
+}
+html body main #sect-services .block-services .block-item {
+  background-color: #6E8383;
+  width: 100%;
+  padding: 2rem;
+  margin: 1rem 0;
+  transition: all 0.8s ease;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-services .block-services .block-item {
+    width: 30%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-services .block-services .block-item {
+    width: 25%;
+    padding: 3rem 4rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-services .block-services .block-item {
+    padding: 5rem 4rem;
+  }
+}
+html body main #sect-services .block-services .block-item:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  background-color: #536363;
+}
+html body main #sect-services .block-services .block-item .block-icon {
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-services .block-services .block-item .block-icon {
+    margin-bottom: 2rem;
+  }
+}
+html body main #sect-services .block-services .block-item .block-icon i {
+  font-size: 1.5rem;
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-services .block-services .block-item .block-icon i {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-services .block-services .block-item .block-icon i {
+    font-size: 2.3rem;
+  }
+}
+html body main #sect-services .block-services .block-item .block-title {
+  margin-bottom: 0.5rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-services .block-services .block-item .block-title {
+    margin-bottom: 1rem;
+  }
+}
+html body main #sect-services .block-services .block-item .block-title h3 {
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-services .block-services .block-item .block-title h3 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-services .block-services .block-item .block-title h3 {
+    font-size: 1.8rem;
+  }
+}
+html body main #sect-services .block-services .block-item .block-para p {
+  font-size: 0.7rem;
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-services .block-services .block-item .block-para p {
+    font-size: 1rem;
+  }
+}
+html body main #sect-schedule {
+  background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
+  display: grid;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin-bottom: 0;
+}
+html body main #sect-schedule .block-content {
+  grid-column-gap: 0;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+html body main #sect-contact {
+  background-color: #536363;
+  margin: 0;
 }
