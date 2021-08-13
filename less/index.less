@@ -44,7 +44,8 @@
 // COLOR PALETTE :
 @colorPrimaryDark: #536363;
 @colorPrimary: #6E8383;
-@colorAccent: #DBB262;
+@colorAccent: #EBB753;
+@colorAccentHover: #DBB262;
 
 @lightColor: #ffffff;
 @darkColor: #000000;
@@ -197,7 +198,7 @@ a {
         background-color: @colorAccent;
         padding: 1rem 2.5rem;
         border-radius: 2px;
-        transition: all 1s ease-in-out;
+        transition: all 0.8s ease-in-out;
         font-size: 0.6rem;
         @media @large {
             font-size: 0.7rem;
@@ -208,7 +209,7 @@ a {
             padding: 1.1rem 2.5rem;
         }
         &:hover {
-            color: @darkColor;
+            background-color: @darkColor;
         }
     }
 }
@@ -219,6 +220,7 @@ a {
 // HTML STRUCTURE
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 html {
+    scroll-behavior: smooth;
     body {
         background-color: @colorPrimary;
         color: @lightColor;

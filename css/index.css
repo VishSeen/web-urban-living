@@ -131,10 +131,10 @@ a {
 .block-button a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  background-color: #DBB262;
+  background-color: #EBB753;
   padding: 1rem 2.5rem;
   border-radius: 2px;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
   font-size: 0.6rem;
 }
 @media only screen and (min-width: 1366px) {
@@ -150,7 +150,10 @@ a {
   }
 }
 .block-button a:hover {
-  color: #000000;
+  background-color: #000000;
+}
+html {
+  scroll-behavior: smooth;
 }
 html body {
   background-color: #6E8383;
