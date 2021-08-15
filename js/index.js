@@ -50,7 +50,13 @@ function startupAnimation() {
             blockOptionsItems.style.transitionDelay = '0s';
             blockOptionsItems.style.transition = 'all 0.4s ease';
         }
-    }, 5000);
+
+        const main = document.querySelector('main');
+        const footer = document.querySelector('footer');
+        main.style.display = 'block';
+        footer.style.display = 'block';
+    }, 4000);
+
 }
 
 

@@ -138,6 +138,8 @@
 	color: @lightColor;
 }
 
+
+///////////////////////////
 /* Scroller */
 ::-webkit-scrollbar {
   display: none;
@@ -146,7 +148,6 @@
     display: block;
   }
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: @scrollColor;
@@ -157,6 +158,21 @@
   }
 }
 
+///////////////////////////
+// Placeholder
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: @lightColor;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: @lightColor;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: @lightColor;
+  }
+///////////////////////////
 
 
 * {
@@ -197,7 +213,7 @@ a {
         font-weight: @fontBold;
         background-color: @colorAccent;
         padding: 1rem 2.5rem;
-        border-radius: 2px;
+        border-radius: 4px;
         transition: all 0.8s ease-in-out;
         font-size: 0.6rem;
         @media @large {
@@ -557,15 +573,16 @@ html {
         // MAIN
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         main {
-            // display: none;
+            display: none;
             margin: 3rem 0;
             margin-bottom: 0;
             .sect {
                 display: grid;
-                padding: 2rem 1rem;
+                padding: 5rem 1rem;
                 margin: 1rem 0;
                 @media @medium {
                     margin: 2rem 0;
+                    padding: 5rem 2rem;
                 }
                 @media @large {
                     margin-top: 3rem;
@@ -582,7 +599,6 @@ html {
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
-                    padding: 5rem 1rem;
                     transition: all 1s ease;
                     @media @medium {
                         height: 100vh;
@@ -590,7 +606,7 @@ html {
                 }
                 .block-content {
                     display: grid;
-                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-rows: 1fr auto;
                     grid-template-areas: "text"
                                          "image";
                     grid-row-gap: 1rem;
@@ -830,6 +846,70 @@ html {
             #sect-contact {
                 background-color: @colorPrimaryDark;
                 margin: 0;
+                padding-bottom: 1rem;
+                .block-content {
+                    grid-template-rows: 1fr auto;
+                    grid-template-columns: 1fr;
+                    grid-template-areas: "text"
+                                         "image";
+                    grid-row-gap: 4rem;
+                    @media @large {
+                        grid-template-rows: 1fr;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-areas: "text image";
+                        grid-column-gap: 4rem;
+                    }
+                    .block-text {
+                        .block-title {
+                            margin-bottom: 1rem;
+                        }
+                        .block-form {
+                            margin-top: 5rem;
+                            form {
+                                display: flex;
+                                flex-direction: column;
+                                input {
+                                    font-family: @fontPrompt;
+                                    font-weight: @fontRegular;
+                                    margin-bottom: 1rem;
+                                    padding: 0.5rem 1rem 0.5rem 0;
+                                    background-color: transparent;
+                                    border-bottom: 1px solid @lightColor;
+                                    border-top: none;
+                                    border-left: none;
+                                    border-right: none;
+                                    color: @lightColor;
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                                input[type="submit"] {
+                                    background-color: @colorAccent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            display: none;
+            padding: 1rem;
+            background-color: @colorPrimaryDark;
+            text-align: center;
+            @media @medium {
+                padding: 2rem;
+            }
+            p {
+                font-size: 0.7rem;
+                @media @large {
+                    font-size: 0.8rem;
+                }
+                a {
+                    font-weight: @fontRegular;
+                    text-decoration: underline;
+                }
             }
         }
     }
