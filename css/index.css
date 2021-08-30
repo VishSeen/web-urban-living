@@ -631,6 +631,7 @@ html body main .sect .block-content {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "text image";
     grid-column-gap: 4rem;
+    align-items: center;
   }
 }
 @media only screen and (min-width: 1366px) {
@@ -784,6 +785,19 @@ html body main #sect-sponsors .block-sponsors .item img {
 html body main #sect-sponsors .block-sponsors .item img:hover {
   cursor: pointer;
 }
+html body main #sect-schedule {
+  background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
+  display: grid;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin-bottom: 0;
+}
+html body main #sect-schedule .block-content {
+  grid-column-gap: 0;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
 html body main #sect-services {
   background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/services.jpg');
   display: flex;
@@ -901,29 +915,67 @@ html body main #sect-services .block-services .block-item .block-para p {
     font-size: 1rem;
   }
 }
-html body main #sect-schedule {
-  background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
-  display: grid;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  margin-bottom: 0;
+html body main #sect-team .block-content {
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 4rem;
+  grid-row-gap: 4rem;
+  grid-template-areas: "img1 img2 text text" "img3 img4 img5 img6";
 }
-html body main #sect-schedule .block-content {
-  grid-column-gap: 0;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
+@media only screen and (min-width: 768px) {
+  html body main #sect-team .block-content {
+    grid-template-areas: "img1 img2 text text" "img3 img4 img5 img6";
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-team .block-content {
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-team .block-content {
+    grid-column-gap: 6rem;
+    grid-row-gap: 6rem;
+  }
+}
+html body main #sect-team .block-image {
+  width: 100%;
+}
+html body main #sect-team #team1 {
+  grid-area: img1;
+}
+html body main #sect-team #team2 {
+  grid-area: img2;
+}
+html body main #sect-team #team3 {
+  grid-area: img3;
+}
+html body main #sect-team #team4 {
+  grid-area: img4;
+}
+html body main #sect-team #team5 {
+  grid-area: img5;
+}
+html body main #sect-team #team6 {
+  grid-area: img6;
 }
 html body main #sect-contact {
   background-color: #536363;
   margin: 0;
   padding-bottom: 1rem;
+  padding-top: 5rem;
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-contact {
+    padding-top: 10rem;
+  }
 }
 html body main #sect-contact .block-content {
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  grid-template-areas: "text" "image";
-  grid-row-gap: 4rem;
+  grid-template-areas: "text";
 }
 @media only screen and (min-width: 1366px) {
   html body main #sect-contact .block-content {
@@ -938,6 +990,7 @@ html body main #sect-contact .block-content .block-text .block-title {
 }
 html body main #sect-contact .block-content .block-text .block-form {
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 html body main #sect-contact .block-content .block-text .block-form form {
   display: flex;
@@ -960,6 +1013,102 @@ html body main #sect-contact .block-content .block-text .block-form form input:f
 }
 html body main #sect-contact .block-content .block-text .block-form form input[type="submit"] {
   background-color: #EBB753;
+}
+html body main #sect-contact .block-content .block-text .block-form form .block-button {
+  margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-contact .block-content .block-text .block-form form .block-button {
+    margin-top: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-contact .block-content .block-text .block-form form .block-button {
+    margin-top: 2rem;
+  }
+}
+html body main #sect-contact .block-content .block-text .block-more {
+  font-family: 'Poppins', sans-serif;
+}
+html body main #sect-contact .block-content .block-text .block-more h5 {
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-contact .block-content .block-text .block-more h5 {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-contact .block-content .block-text .block-more h5 {
+    font-size: 1rem;
+  }
+}
+html body main #sect-contact .block-content .block-text .block-more .block-more-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-contact .block-content .block-text .block-more .block-more-list {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+html body main #sect-contact .block-content .block-text .block-more .block-more-list div {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-contact .block-content .block-text .block-more .block-more-list div {
+    font-size: 0.9rem;
+    margin-right: 2rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html body main #sect-contact .block-content .block-text .block-more .block-more-list div {
+    margin-right: 1rem;
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html body main #sect-contact .block-content .block-text .block-more .block-more-list div {
+    font-size: 1rem;
+    margin-right: 2rem;
+  }
+}
+html body main #sect-contact .block-content .block-text .block-more .block-more-list ul {
+  display: flex;
+  align-items: center;
+}
+html body main #sect-contact .block-content .block-text .block-more .block-more-list ul li {
+  padding: 0.5rem 0.3rem;
+}
+html body main #sect-contact .block-content .block-text .block-more .block-more-list i {
+  font-size: 14px;
+  margin-right: 0;
+}
+@media only screen and (min-width: 768px) {
+  html body main #sect-contact .block-content .block-text .block-more .block-more-list i {
+    font-size: 20px;
+    margin-right: 0.3rem;
+  }
+}
+html body main #sect-contact .block-content .block-image {
+  display: none;
+}
+@media only screen and (min-width: 1366px) {
+  html body main #sect-contact .block-content .block-image {
+    display: block;
+  }
+}
+html body main #sect-contact .block-content .block-image img {
+  height: 40rem;
+  object-fit: cover;
 }
 html body footer {
   display: none;

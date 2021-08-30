@@ -615,6 +615,7 @@ html {
                         grid-template-columns: repeat(2, 1fr);
                         grid-template-areas: "text image";
                         grid-column-gap: 4rem;
+                        align-items: center;
                     }
                     @media @large {
                         grid-column-gap: 7rem;
@@ -730,6 +731,26 @@ html {
             }
 
 
+            #sect-schedule {
+                background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
+                display: grid;
+                align-items: center;
+                text-align: center;
+                height: 100vh;
+                margin-bottom: 0;
+                .block-content {
+                    grid-column-gap: 0;
+                    grid-template-rows: 1fr;
+                    grid-template-columns: 1fr;
+                }
+            }
+
+
+            #sect-projects {
+
+            }
+
+
             #sect-services {
                 background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/services.jpg');
                 display: flex;
@@ -828,31 +849,63 @@ html {
             }
 
 
-            #sect-schedule {
-                background-image: linear-gradient(rgba(110, 131, 131, 0.65), rgba(110, 131, 131, 0.65)), url('../img/parallaxe/schedule.jpg');
-                display: grid;
-                align-items: center;
-                text-align: center;
-                height: 100vh;
-                margin-bottom: 0;
+            #sect-team {
                 .block-content {
-                    grid-column-gap: 0;
-                    grid-template-rows: 1fr;
-                    grid-template-columns: 1fr;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-column-gap: 4rem;
+                    grid-row-gap: 4rem;
+                    grid-template-areas: "img1 img2 text text"
+                                         "img3 img4 img5 img6";
+                    @media @medium {
+                        grid-template-areas: "img1 img2 text text"
+                        "img3 img4 img5 img6";
+                        grid-column-gap: 2rem;
+                        grid-row-gap: 2rem;
+                    }
+                    @media @large {
+                        grid-column-gap: 4rem;
+                        grid-row-gap: 4rem;
+                    }
+                    @media @xxlarge {
+                        grid-column-gap: 6rem;
+                        grid-row-gap: 6rem;
+                    }
+                }
+                .block-image {
+                    width: 100%;
+                }
+                #team1 {
+                    grid-area: img1;
+                }
+                #team2 {
+                    grid-area: img2;
+                }
+                #team3 {
+                    grid-area: img3;
+                }
+                #team4 {
+                    grid-area: img4;
+                }
+                #team5 {
+                    grid-area: img5;
+                }
+                #team6 {
+                    grid-area: img6;
                 }
             }
-
 
             #sect-contact {
                 background-color: @colorPrimaryDark;
                 margin: 0;
                 padding-bottom: 1rem;
+                padding-top: 5rem;
+                @media @large {
+                    padding-top: 10rem;
+                }
                 .block-content {
-                    grid-template-rows: 1fr auto;
+                    grid-template-rows: 1fr;
                     grid-template-columns: 1fr;
-                    grid-template-areas: "text"
-                                         "image";
-                    grid-row-gap: 4rem;
+                    grid-template-areas: "text";
                     @media @large {
                         grid-template-rows: 1fr;
                         grid-template-columns: repeat(2, 1fr);
@@ -865,6 +918,7 @@ html {
                         }
                         .block-form {
                             margin-top: 5rem;
+                            margin-bottom: 5rem;
                             form {
                                 display: flex;
                                 flex-direction: column;
@@ -886,7 +940,89 @@ html {
                                 input[type="submit"] {
                                     background-color: @colorAccent;
                                 }
+                                .block-button {
+                                    margin-top: 1rem;
+                                    @media @medium {
+                                        margin-top: 1.5rem;
+                                    }
+                                    @media @xlarge {
+                                        margin-top: 2rem;
+                                    }
+                                }
                             }
+                        }
+                        .block-more {
+                            font-family: @fontPoppins;
+                            h5 {
+                                margin-bottom: 0.2rem;
+                                font-size: 0.8rem;
+                                @media @medium {
+                                    font-size: 0.9rem;
+                                }
+                                @media @xxlarge {
+                                    font-size: 1rem;
+                                }
+                            }
+                            .block-more-list {
+                                display: flex;
+                                flex-direction: column;
+                                flex-wrap: nowrap;
+                                justify-content: flex-start;
+                                align-items: flex-start;
+                                @media @medium {
+                                    flex-direction: row;
+                                    align-items: center;
+                                }
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-right: 1rem;
+                                    font-weight: @fontRegular;
+                                    font-size: 0.8rem;
+                                    @media @medium {
+                                        font-size: 0.9rem;
+                                        margin-right: 2rem;
+                                    }
+                                    @media @xlarge {
+                                        margin-right: 1rem;
+                                    }
+                                    @media @xxlarge {
+                                        font-size: 1rem;
+                                        margin-right: 2rem;
+                                    }
+                                }
+                                ul {
+                                    display: flex;
+                                    align-items: center;
+                                    li {
+                                        padding: 0.5rem 0.3rem;
+                                    }
+                                }
+                                i {
+                                    font-size: 14px;
+                                    margin-right: 0;
+                                    @media @medium {
+                                        font-size: 20px;
+                                        margin-right: 0.3rem;
+                                    }
+                                }
+                                .socials {
+                                }
+                                .mail {
+                                }
+                                .adresse {
+                                }
+                            }
+                        }
+                    }
+                    .block-image {
+                        display: none;
+                        @media @large {
+                            display: block;
+                        }
+                        img {
+                            height: 40rem;
+                            object-fit: cover;
                         }
                     }
                 }
